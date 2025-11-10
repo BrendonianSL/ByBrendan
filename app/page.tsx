@@ -1,65 +1,32 @@
+'use client';
+
 import Image from "next/image";
+import { useEffect } from 'react';
+import Header from "@/pageBlocks/Header";
+import { motion } from 'motion/react';
+import BlogContainer from "./_blocks/BlogContainer";
 
 export default function Home() {
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className={`flex min-h-screen items-center justify-center font-sans`}>
+      <main className="max-w-[1000px] w-full">
+        <section className='w-full h-full'>
+          <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+            <rect width="50" height="50" rx="8" fill="#FBA272"/>
+            <rect x="12" y="12" width="25" height="25" fill="url(#pattern0_12_2)"/>
+            <defs>
+              <pattern id="pattern0_12_2" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlinkHref="#image0_12_2" transform="scale(0.0111111)"/>
+              </pattern>
+              <image id="image0_12_2" width="90" height="90" preserveAspectRatio="none" xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAEIklEQVR4nO2c24tXVRTHlw6OloO3iiFL8ILlg4hOPQiBYKiVFzBBjcoUQaEXyeilB1+6DPag9hCUPg1DSYUIovPgLbzQRQiFREQCywgvQVlqzW+cZj6xcP9iRmfmd8Y5Z5+9z1mfP2Dvtb6sfVt77yViGIZhGIZhGIZhGIZhZAYwAZgPvAHsBNqAs8A14A+giwCQ2ABGAkuBD4EfgG4iQGIAGAYsAlqBP4kQCRmgAdgEXCByJESAemAjcIWCIKEBLAZ+pmBIKAAPAbspKBICQBNwkQIjeQOsBSoUHMlZ5NdDOVBkTZ4iv0mJkJxEfrEskVwlD5FnA7coGZLDQUQTPqVDPAv9DiVFPIo8GeigpIhHoT+hxIgnkR8rw6EkBKHfpuSIJ6FPU3LEg8hT83ayLEK/Stx0xSL0duKlA1gXi9BfEScV4AXggViEPk+kIssd+8fFIvRV4psulvWwf2YsQrcTYSRXAVak0bBkDXCbCCO5CrAjjcYla9z7t+giuQpwLo0OJGsiuN2uDCDy3LQ68SH0YSIUWQFaUurnX8ka4CPiFLkpxXvNv30I/TLxiTwcOJlif9d95aK7YxFZAZpT7vOq+AA4QTwir8mg34u+hF5PHCIvyegm6JQvoUcAvxDYYaQnwPMZnmIPiC+ADZRTZKXFp9C6kn9LeaaLnjR7E9o5NQ34i3KJrKz3p3LvYdpJ8aeLnszzp3BvJ1dn+GqpElAkV5noT917nZ2fwTTSEVgkK9f8qdq/07Pc79eiRrKyXwL6ctw8xHm7EqjIyhYJCWC6+/7WVSCRlWclRIAZ7kP99QRO/BO4yLoG1UuoAHOASzWcuAksCGzhu5svJVTcE7L2Gg5oLY6mgCO5yhoJDaAO2JrA+AvAE4FHcnXaGC0hATwOHE1gfBswJoJIVj6WkHCnxFpPErqB9zXqE7QVwj8ZtXe2BFQLSSvKJNlZvBTZd+d9flSsXbZHb1x+S2Dwr8DTCdrcQjjkH83AU8DXCQ3+Bni0RnujEo4Kn/hL8vdzCGlNOLQ73e5jwI2+ZsSA7wgLHaUP+1O2dwR/pi91Ehr6oz7DktrtPglcJix0yljhR9k7IugL+VeA44MwsssVB2wYRB/nCItmXwvcc8Cn91GX7vskUdxPilWP4SGwV+9ExcOl6+f3YdzvbktWN8SKYp3kyx4viSNXYXEwaBS+B4xPqf9VOR5Sdg0lULIq2aMCbwMeycCGBQnTqmlxw3vCCFhYwygtFvgWMDZjOyYBxzzNx1Oz9GWghXB3H8fmL1wWzc/Qkv/Xi9cy+GWgu6JDwDO+fBnIQR2+m4HlwIM521PvXoUeHMQevq99sV4cvwtMydOfKAAagZXAB8ARt/++7PLVt13m8CfgjN6IuIVas4CNedtuGIZhGIZhGIZhGIYhBeE/knk0E+DO9m4AAAAASUVORK5CYII="/>
+            </defs>
+          </svg>
+          <h2>ByBrendan</h2>
+          <h3 className='text-neutral-500'>Welcome to my blog website where I discuss topics that interest me, such as video games, movies, manga, anime, music, and more!</h3>
+          <BlogContainer />
+        </section>
       </main>
     </div>
-  );
+  ); 
 }
