@@ -23,7 +23,6 @@ export default function RootLayout({
       <body
         className={`${outfit.variable} antialiased h-full w-full bg-(--lightBackground)`}
       >
-        <Header />
         {children}
       </body>
     </html>
