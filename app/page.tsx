@@ -5,13 +5,14 @@ import { useEffect } from 'react';
 import Header from "@/pageBlocks/Header";
 import { motion } from 'motion/react';
 import BlogContainer from "./_blocks/BlogContainer";
+import About from './_blocks/About';
 
 export default function Home() {
 
   return (
     <div className={`flex min-h-screen items-center justify-center font-sans`}>
-      <main className="max-w-[1000px] w-full">
-        <section className='w-full h-full'>
+      <main className="max-w-[1000px] w-full flex flex-col gap-16">
+        <section className='w-full h-full flex flex-col gap-4'>
           <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <rect width="50" height="50" rx="8" fill="#FBA272"/>
             <rect x="12" y="12" width="25" height="25" fill="url(#pattern0_12_2)"/>
@@ -24,8 +25,9 @@ export default function Home() {
           </svg>
           <h2>ByBrendan</h2>
           <h3 className='text-neutral-500'>Welcome to my blog website where I discuss topics that interest me, such as video games, movies, manga, anime, music, and more!</h3>
-          <BlogContainer />
         </section>
+        <BlogContainer />
+        <About />
       </main>
     </div>
   ); 

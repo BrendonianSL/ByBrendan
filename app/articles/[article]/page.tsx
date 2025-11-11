@@ -1,30 +1,48 @@
-export default function Article() {
-    return (
-        <section className='flex h-full'>
-            <figure className='w-full bg-red-500 h-full'>
+'use client';
 
-            </figure>
-            <div className='w-full h-full overflow-scroll px-16 py-8 flex flex-col gap-4'>
-                <div>
-                    <h2>Gachiakuta</h2>
-                    <h3 className='mt-2 text-neutral-500'>Truly another man's treasure.</h3>
-                    <div className='mt-4 text-[14px]'>Written on November 3, 2025</div>
+import { useEffect } from 'react';
+export default function Article() {
+
+    // Fetch blog data directly.
+    useEffect(() => {
+        // Write Logic Here.
+    }, []);
+
+    return (
+        <section className='flex h-full justify-center p-8'>
+            <div className='max-w-[1320px] w-full flex flex-col items-center gap-8'>
+                <div className='w-full flex flex-col gap-4'>
+                    <h2>I Am Putting Something Here For The Time Being.</h2>
+                    <img className='rounded-md w-full object-cover h-full max-h-[500px]' src='/gachiakuta1.webp' alt='Gachiakuta' />
                 </div>
-                <p>
-                    The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz. Brawny gods just
-                </p>
-                <p>
-                    The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz. Brawny gods just
-                </p>
-                <p>
-                    The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz. Brawny gods just
-                </p>
-                <p>
-                    The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz. Brawny gods just
-                </p>
-                <p>
-                    The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV quiz. How quickly daft jumping zebras vex. Two driven jocks help fax my big quiz. Quick, Baz, get my woven flax jodhpurs! "Now fax quiz Jack!" my brave ghost pled. Five quacking zephyrs jolt my wax bed. Flummoxed by job, kvetching W. zaps Iraq. Cozy sphinx waves quart jug of bad milk. A very bad quack might jinx zippy fowls. Few quips galvanized the mock jury box. Quick brown dogs jump over the lazy fox. The jay, pig, fox, zebra, and my wolves quack! Blowzy red vixens fight for a quick jump. Joaquin Phoenix was gazed by MTV for luck. A wizard’s job is to vex chumps quickly in fog. Watch "Jeopardy!", Alex Trebek's fun TV quiz game. Woven silk pyjamas exchanged for blue quartz. Brawny gods just
-                </p>
+                <div className='max-w-[900px] w-full flex flex-col lg:flex-row gap-8 justify-center'>
+                    <div className='lg:max-w-[200px] w-full grid grid-cols-2 lg:flex lg:flex-col gap-4'>
+                        <div className='flex flex-col w-full'>
+                            <h3>Written by:</h3>
+                            <p className='text-neutral-500'>Brendan Lewis</p>
+                        </div>
+                        <div className='flex flex-col w-full'>
+                            <h3>Published:</h3>
+                            <p className='text-neutral-500'>01/01/2026</p>
+                        </div>
+                        <div className='flex flex-col w-full'>
+                            <h3>Category:</h3>
+                            <p className='text-neutral-500'>Anime/Manga</p>
+                        </div>
+                        <div className='flex flex-col w-full'>
+                            <h3>Socials</h3>
+                            <p className='text-neutral-500'>01/01/2026</p>
+                        </div>
+                    </div>
+                    <div className='w-full'>
+                        <h2>I think this is a good start.</h2>
+                        <p className='text-neutral-500'>
+                            I’m Brendan Lewis, a Junior Frontend Developer for the Portland Trail Blazers. As an Indiana University graduate, I have a deep background in Game Development. However, post graduation, I have since pivoted towards Web Development. My passion for creating interesting and compelling designs for players has since been translated to creating transformative and user-centered designs. I thrive on developing my skillset by tackling new projects or learning new languages and frameworks to better market myself for the future.
+
+Outside of my profession, I find myself working out at the gym, playing video games (a bit too much), and being around friends and loved ones. I also love peaches.
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     )

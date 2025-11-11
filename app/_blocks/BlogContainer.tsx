@@ -1,4 +1,4 @@
-import BlogCard from './BlogCard';
+import BlogCard from "@/pageBlocks/BlogCard"
 
 export default function BlogContainer() {
     return (
