@@ -1,7 +1,21 @@
+import { motion } from 'motion/react';
+import FeaturedCard from './FeaturedCard';
+
+const fakeArticles = [
+    {
+        title: 'Something',
+        subtitle: 'Something Else',
+    }
+]
 export default function Featured() {
     return (
-        <figure className='w-full h-[500px] rounded-lg bg-[url(/image.jpg)] bg-center bg-cover'>
-            
-        </figure>
+        <>
+            <h2>Recent Articles</h2>
+            <article className='flex gap-2 flex-col'>
+                {fakeArticles.map((article, index) => (
+                    <FeaturedCard key={index} {...article}/>
+                ))}
+            </article>
+        </>
     )
 }

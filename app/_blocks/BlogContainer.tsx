@@ -2,7 +2,7 @@ import BlogCard from "@/pageBlocks/BlogCard"
 
 export default function BlogContainer() {
     return (
-        <section className='grid grid-cols-4 gap-4'>
+        <section className='grid grid-cols-4 gap-4'>q
             <BlogCard />
             <BlogCard />
             <BlogCard />
