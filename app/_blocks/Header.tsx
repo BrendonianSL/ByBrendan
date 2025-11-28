@@ -1,19 +1,79 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { spring } from 'motion/react';
-import { motion } from 'motion/react';
+import Link from "next/link";
+import { spring } from "motion/react";
+import { motion } from "motion/react";
+import { useThemeStore } from "../_state/Theme";
 
 export default function Header() {
-    return (
-        <header className='flex items-center justify-between h-[75px] px-8 w-full'>
-            <div className='flex gap-4'>
-                <img className='rounded-lg w-12 h-12 object-cover' src='/brendan_2.jpg' alt='Picture of Brendan' />
-                <div className='flex flex-col gap-2'>
-                    <span>Brendan Lewis</span>
-                    <p>Nerd Enthusiast</p>
-                </div>
-            </div>
-        </header>
-    )
-}   
+  // Sets variable equal to the setTheme function.
+  const setTheme = useThemeStore((state) => state.setTheme);
+  const theme = useThemeStore((state) => state.theme);
+
+  return (
+    <header className="flex items-center justify-between h-[75px] px-8 w-full">
+      <div className="flex gap-4">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="#5CB8FF"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12.594 23.258L12.582 23.26L12.511 23.295L12.491 23.299L12.477 23.295L12.406 23.259C12.3953 23.2563 12.3873 23.2583 12.382 23.265L12.378 23.275L12.361 23.703L12.366 23.723L12.376 23.736L12.48 23.81L12.495 23.814L12.507 23.81L12.611 23.736L12.623 23.72L12.627 23.703L12.61 23.276C12.6073 23.2653 12.602 23.2593 12.594 23.258ZM12.858 23.145L12.844 23.147L12.66 23.24L12.65 23.25L12.647 23.261L12.665 23.691L12.67 23.703L12.678 23.711L12.879 23.803C12.8917 23.8063 12.9013 23.8037 12.908 23.795L12.912 23.781L12.878 23.167C12.8747 23.1543 12.868 23.147 12.858 23.145ZM12.143 23.147C12.1386 23.1443 12.1333 23.1435 12.1283 23.1446C12.1233 23.1457 12.1188 23.1487 12.116 23.153L12.11 23.167L12.076 23.781C12.0767 23.793 12.0823 23.801 12.093 23.805L12.108 23.803L12.309 23.71L12.319 23.702L12.322 23.691L12.34 23.261L12.337 23.249L12.327 23.239L12.143 23.147Z"
+            fill="#5CB8FF"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M17.11 3.00601C17.2594 3.02246 17.4031 3.07236 17.5305 3.152C17.6579 3.23163 17.7658 3.33896 17.846 3.46601C21.046 8.53301 20.563 13.912 17.89 17.3C16.555 18.991 14.68 20.171 12.493 20.52C10.585 20.823 8.50002 20.484 6.39902 19.384C6.20602 19.993 6.06902 20.584 5.99002 21.141C5.95159 21.4027 5.81107 21.6384 5.59923 21.7967C5.38738 21.955 5.12145 22.023 4.85963 21.9857C4.59781 21.9484 4.36142 21.8089 4.2022 21.5978C4.04297 21.3866 3.97387 21.121 4.01002 20.859C4.14893 19.9311 4.3842 19.0202 4.71202 18.141C3.17502 16.451 2.75502 14.313 2.94202 12.403C3.14802 10.296 4.10902 8.27501 5.36002 7.23201C7.03202 5.83901 8.78802 5.26701 10.312 4.98701C10.978 4.87174 11.6486 4.78466 12.322 4.72601C12.801 4.67801 13.29 4.64601 13.758 4.53001C14.4507 4.3625 15.1128 4.08714 15.72 3.71401C16.162 3.43801 16.539 2.94201 17.11 3.00601ZM7.15002 17.518C8.26202 15.251 10.08 13.078 12.447 11.894C12.5655 11.8359 12.6714 11.755 12.7585 11.6558C12.8455 11.5566 12.9121 11.4412 12.9544 11.3162C12.9966 11.1911 13.0137 11.059 13.0046 10.9273C12.9956 10.7956 12.9605 10.6671 12.9015 10.549C12.8425 10.431 12.7607 10.3257 12.6609 10.2394C12.561 10.1531 12.4451 10.0875 12.3197 10.0462C12.1944 10.0049 12.0621 9.98886 11.9305 9.99895C11.7989 10.009 11.6706 10.0451 11.553 10.105C8.94502 11.409 6.94702 13.664 5.64802 16.069C5.90621 16.4897 6.22649 16.869 6.59802 17.194C6.78335 17.3093 6.96668 17.4173 7.15002 17.518Z"
+            fill="#5CB8FF"
+          />
+        </svg>
+        <h3>ByBrendan</h3>
+      </div>
+      <div className="flex gap-8">
+        <nav className="flex gap-4 dark:text-[#ABA9A7]">
+          <Link href="/">Home</Link>
+          <Link href="/posts">All Posts</Link>
+          <Link href="https://github.com/BrendonianSL/ByBrendan#">
+            View Repository
+          </Link>
+        </nav>
+        <svg
+          onClick={() => setTheme()} // Calls the setTheme function when clicked.{}
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+        >
+          <title>ic_fluent_dark_theme_24_regular</title>
+          <desc>Created with Sketch.</desc>
+          <g
+            id="🔍-Product-Icons"
+            stroke="none"
+            stroke-width="1"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g
+              id="ic_fluent_dark_theme_24_regular"
+              fill={`${theme === "dark" ? "#FFF" : "#1F1F1F"}`}
+              fill-rule="nonzero"
+            >
+              <path
+                d="M12,22 C17.5228475,22 22,17.5228475 22,12 C22,6.4771525 17.5228475,2 12,2 C6.4771525,2 2,6.4771525 2,12 C2,17.5228475 6.4771525,22 12,22 Z M12,20.5 L12,3.5 C16.6944204,3.5 20.5,7.30557963 20.5,12 C20.5,16.6944204 16.6944204,20.5 12,20.5 Z"
+                id="🎨-Color"
+              ></path>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </header>
+  );
+}
