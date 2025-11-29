@@ -2,9 +2,9 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Header from "./_blocks/Header";
 import { useThemeStore } from "./_state/Theme";
 import { useEffect } from "react";
+import Header from "./_blocks/Header";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -29,6 +29,7 @@ export default function RootLayout({
           theme === "dark" ? "dark dark:bg-[#171616]" : "bg-[#F5F5F5]"
         }`}
       >
+        <Header />
         {children}
       </body>
     </html>
